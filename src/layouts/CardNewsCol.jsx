@@ -25,7 +25,7 @@ export function CardNewsCol({ className, heightImg, isHidden, news, category }) 
                     <p className="text-gray-400 text-sm">{timeAgo}</p>
                 </div>
                 <p className="font-semibold line-clamp-3">{news.title}</p>
-                <p className={`line-clamp-3 text-sm text-gray-400 ${isHidden ? "hidden" : ""}`}>{news.content}</p>
+                <p className={`line-clamp-2 text-sm text-gray-400 ${isHidden ? "hidden" : ""}`}>{news.content}</p>
                 <div className="flex items-center gap-1 text-sm ">
                     <p className="font-semibold text-red-500 capitalize">{category}</p>
 

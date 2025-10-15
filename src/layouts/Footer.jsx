@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export function Footer() {
     return (
-        <footer className="bg-gray-300 text-gray-800 mt-20">
+        <footer className="bg-black text-gray-800 mt-20">
             {/* Main Footer Content */}
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -10,9 +10,9 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <div className="flex items-center gap-3 mb-4">
-                            <p className="text-3xl font-bold">Radar <span className="text-red-500">News</span></p>
+                            <p className="text-white text-3xl font-bold">Radar <span className="text-red-500">News</span></p>
                         </div>
-                        <p className="text-gray-600 mb-6 max-w-md">
+                        <p className="text-gray-100 mb-6 max-w-md">
                             Sumber berita terpercaya dan terupdate untuk informasi terkini seputar politik, bisnis, teknologi, dan hiburan.
                         </p>
                         <div className="flex gap-4">
@@ -54,13 +54,13 @@ export function Footer() {
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
                         <div>
                             <h3 className="font-bold text-lg text-red-500">Berlangganan Newsletter</h3>
-                            <p className="text-gray-600">Dapatkan update berita terbaru langsung ke email Anda</p>
+                            <p className="text-gray-100">Dapatkan update berita terbaru langsung ke email Anda</p>
                         </div>
                         <div className="flex gap-2 w-full lg:w-auto">
                             <input
                                 type="email"
                                 placeholder="Alamat email Anda"
-                                className="px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-red-500 flex-1 lg:flex-none lg:w-64"
+                                className="px-4 py-2 rounded-lg border border-gray-400 focus:outline-none focus:border-red-500 flex-1 lg:flex-none lg:w-64 placeholder:text-gray-100"
                             />
                             <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors font-medium">
                                 Subscribe
@@ -71,16 +71,16 @@ export function Footer() {
             </div>
 
             {/* Bottom Footer */}
-            <div className="bg-gray-400 py-6">
+            <div className="bg-black py-6">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-gray-100 text-sm">
                             © 2024 NewsHub. All rights reserved.
                         </p>
                         <div className="flex gap-6 text-sm">
-                            <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Privacy</a>
-                            <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Terms</a>
-                            <a href="#" className="text-gray-700 hover:text-red-500 transition-colors">Sitemap</a>
+                            <a href="#" className="text-gray-100 hover:text-red-500 transition-colors">Privacy</a>
+                            <a href="#" className="text-gray-100 hover:text-red-500 transition-colors">Terms</a>
+                            <a href="#" className="text-gray-100 hover:text-red-500 transition-colors">Sitemap</a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ function FooterLink({ href, text }) {
         <li>
             <a
                 href={href}
-                className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                className="text-gray-100 hover:text-red-500 transition-colors duration-200"
             >
                 {text}
             </a>

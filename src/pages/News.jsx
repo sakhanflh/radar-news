@@ -55,30 +55,43 @@ export function News() {
         <div className="mt-32">
             <div className="flex gap-7 ">
                 <aside className="w-1/2 space-y-2">
-                    <div className="flex items-center gap-1">
-                        <div className="bg-red-500 rounded-full w-6 h-6 overflow-hidden">
-                            <img src={img} alt="" className="w-full h-full object-cover" />
-                        </div>
-                        <p className="font-semibold">CNN</p>
-                    </div>
-                    <div className="space-y-1">
-                        <h1 className="line-clamp-2 font-semibold">{newsUpdate?.title}</h1>
-                        <span className="flex gap-3 text-sm">
-                            <p className="text-orange-400 font-semibold capitalize">{category}</p>
-                            <p className="text-gray-400 opacity-50">|</p>
-                            <p className="text-gray-400">{timeAgo}</p>
-                        </span>
-                    </div>
-                    <div className="bg-red-500 w-full h-[288px] rounded-lg overflow-hidden">
-                        <img src={newsUpdate?.image} alt="" className="w-full h-full object-cover" />
-                    </div>
+                    {loading ? (
+                        Array.from({ length: 1 }).map((_, idx) => (
+                            <SkeletonLoading
+                                key={idx}
+                                width="100%"
+                                height="375px"
+                                className="rounded-lg"
+                            />
+                        ))
+                    ) : (
+                        <>
+                            <div className="flex items-center gap-1">
+                                <div className=" rounded-full w-6 h-6 overflow-hidden">
+                                    <img src={img} alt="" className="w-full h-full object-cover" />
+                                </div>
+                                <p className="font-semibold">CNN</p>
+                            </div>
+                            <div className="space-y-1">
+                                <h1 className="line-clamp-2 font-semibold">{newsUpdate?.title}</h1>
+                                <span className="flex gap-3 text-sm">
+                                    <p className="text-orange-400 font-semibold capitalize">{category}</p>
+                                    <p className="text-gray-400 opacity-50">|</p>
+                                    <p className="text-gray-400">{timeAgo}</p>
+                                </span>
+                            </div>
+                            <div className=" w-full h-[288px] rounded-lg overflow-hidden">
+                                <img src={newsUpdate?.image} alt="" className="w-full h-full object-cover" />
+                            </div>
+                        </>
+                    )}
                 </aside>
                 <article className="w-1/2 space-y-2">
                     {loading ? Array.from({ length: 3 }).map((_, idx) => (
                         <SkeletonLoading
                             key={idx}
                             width="100%"
-                            height="96px"
+                            height="120px"
                             className="rounded-xl"
                         />
                     ))
@@ -112,8 +125,8 @@ export function News() {
                     {loading ? Array.from({ length: 4 }).map((_, idx) => (
                         <SkeletonLoading
                             key={idx}
-                            width="35rem"
-                            height="288px"
+                            width="17rem"
+                            height="260px"
                             className="rounded-lg mt-6"
                         />
                     ))
@@ -136,9 +149,9 @@ export function News() {
                         {loading ? Array.from({ length: 3 }).map((_, idx) => (
                             <SkeletonLoading
                                 key={idx}
-                                width="144px"
-                                height="100px"
-                                className="rounded-lg mt-6"
+                                width="550px"
+                                height="110px"
+                                className="rounded-lg mt-3"
                             />
                         ))
                             : newsMustRead.map((item, idx) => (
@@ -149,7 +162,8 @@ export function News() {
                         {loading ? (
                             <SkeletonLoading
                                 width="100%"
-                                height="236px"
+                                height="365px"
+                                className={"rounded-lg"}
                             />
                         ) : newsMustReadMain ? (
                             <CardNewsCol className={"w-full"} heightImg={"h-[236px]"} news={newsMustReadMain} category={category} />

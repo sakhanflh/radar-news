@@ -50,9 +50,7 @@ export function CardNewsSide({ className, isBlock, isHidden, news, category }) {
                     className={`text-slate-400 line-clamp-2 text-sm ${isBlock ? "" : "hidden"
                         }`}
                 >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quod
-                    laborum. Officia explicabo assumenda nemo mollitia cumque deleniti
-                    reprehenderit animi.
+                    {news.content}
                 </p>
                 <div className="flex items-center gap-1 text-sm">
                     <p className="font-semibold text-red-500">{category}</p>
